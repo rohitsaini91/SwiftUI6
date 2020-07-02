@@ -10,7 +10,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Image("profilepic").resizable().frame(height: 300).aspectRatio(contentMode: .fit).cornerRadius(20).padding()
+            .contextMenu{
+                VStack{
+                    Button(action: {
+                        print("Save")
+                    }) {
+                        HStack{
+                            Image(systemName: "folder.fill")
+                            Text("Save to Gallery")
+                        }
+                    }
+                    Button(action: {
+                        print("Send")
+                    }) {
+                        HStack{
+                            Image(systemName: "paperplane.fill")
+                            Text("Send")
+                        }
+                    }
+                }
+                
+        }
     }
 }
 
@@ -19,3 +40,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
